@@ -123,3 +123,95 @@
     /* LINKS */
     .links {
       display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1px solid var(--accent);
+      color: var(--text);
+      text-decoration: none;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn:hover { background: var(--accent); color: var(--bg); }
+
+    footer {
+      text-align: center;
+      padding: 40px 6vw 60px;
+      color: var(--muted);
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+    }
+    @media (max-width: 600px) {
+      .gallery img { width: 110px; height: 150px; }
+      section { padding: 56px 6vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Corbett Hoffman</h1>
+      <p class="tagline">Actor &nbsp;|&nbsp; Model</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Details</h2>
+    <div class="stats">
+      <div><span>Height</span><strong>5'8"</strong></div>
+      <div><span>Hair</span><strong>Brown</strong></div>
+      <div><span>Eyes</span><strong>Brown</strong></div>
+      <div><span>Based in</span><strong>New York, NY</strong></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="photo2.jpg" alt="Corbett Hoffman headshot">
+      <img src="photo3.jpg" alt="Corbett Hoffman portrait">
+    </div>
+  </section>
+
+  <section>
+    <h2>Connect</h2>
+    <div class="links">
+      <a class="btn" href="https://resumes.actorsaccess.com/corbett" target="_blank" rel="noopener">Actors Access</a>
+      <a class="btn" href="https://app.castingnetworks.com/talent/public-profile/deb488da-be09-11ef-b018-c97a5fdf8384" target="_blank" rel="noopener">Casting Networks</a>
+      <a class="btn" href="https://instagram.com/turbocorbett" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="mailto:parissoon@icloud.com">Email</a>
+    </div>
+  </section>
+
+  <footer>© 2026 CORBETT HOFFMAN</footer>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lb.classList.add('open');
+      });
+    });
+    lb.addEventListener('click', () => lb.classList.remove('open'));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') lb.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>
