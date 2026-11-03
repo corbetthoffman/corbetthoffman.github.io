@@ -4,7 +4,7 @@
   <link rel="icon" type="image/png" href="./favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Corbett Hoffman | Actor · Model</title> <!-- CHANGE if needed -->
+  <title>Corbett Hoffman | Actor · Model</title>
   <meta name="description" content="Corbett Hoffman, actor and model. Headshots, contact, and Actors Access profile.">
   <meta property="og:title" content="Corbett Hoffman | Actor · Model">
   <meta property="og:image" content="hero.jpg">
@@ -86,82 +86,40 @@
     }
     .stats div strong { font-weight: normal; font-size: 1.15rem; }
 
-          <a class="btn" href="https://app.castingnetworks.com/YOUR-LINK-HERE" target="_blank" rel="noopener">Casting Networks</a>
+    /* GALLERY */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .gallery img {
+      width: 140px;
+      height: 180px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .gallery img:hover { opacity: 0.8; }
+
+    /* LIGHTBOX (click-to-open) */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
 
     /* LINKS */
     .links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border: 1px solid var(--accent);
-      color: var(--text);
-      text-decoration: none;
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn:hover { background: var(--accent); color: var(--bg); }
-
-    footer {
-      text-align: center;
-      padding: 40px 6vw 60px;
-      color: var(--muted);
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-    }
-    @media (max-width: 600px) {
-      .gallery { width: 80%; grid-template-columns: 1fr; }
-      section { padding: 56px 6vw; }
-    }
-  </style>
-</head>
-<body>
-
-  <header class="hero">
-    <div class="hero-text">
-      <h1>Corbett Hoffman</h1> <!-- CHANGE -->
-      <p class="tagline">Actor &nbsp;|&nbsp; Model</p>
-    </div>
-  </header>
-
-  <section>
-    <h2>Details</h2>
-    <div class="stats">
-      <!-- CHANGE or delete any of these -->
-      <div><span>Height</span><strong>5'8"</strong></div>
-      <div><span>Hair</span><strong>Brown</strong></div>
-      <div><span>Eyes</span><strong>Brown</strong></div>
-      <div><span>Based in</span><strong>New York, NY</strong></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="photo2.jpg" alt="Corbett Hoffman headshot">
-      <img src="photo3.jpg" alt="Corbett Hoffman portrait">
-    </div>
-  </section>
-
-  <section>
-    <h2>Connect</h2>
-    <div class="links">
-      <!-- CHANGE all three links -->
-      <a class="btn" href="https://resumes.actorsaccess.com/corbett" target="_blank" rel="noopener">Actors Access</a>
-      <a class="btn" href="https://app.castingnetworks.com/talent/public-profile/deb488da-be09-11ef-b018-c97a5fdf8384" target="_blank" rel="noopener">Casting Networks</a>
-      <a class="btn" href="https://instagram.com/turbocorbett" target="_blank" rel="noopener">Instagram</a>
-      <a class="btn" href="mailto:parissoon@icloud.com">Email</a>
-    </div>
-  </section>
-
-  <footer>© 2026 CORBETT HOFFMAN</footer>
-
-</body>
-</html>
